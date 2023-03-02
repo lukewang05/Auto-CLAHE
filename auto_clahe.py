@@ -79,7 +79,7 @@ def create_bright_field_image(stem_file):
 # no user-input parameter
 def auto_clahe(image):
     avg_val = np.average(image)
-    clip_lim = round(10.0 / avg_val)
+    clip_lim = round(10.0 / avg_val) + 1
     clahe = cv2.createCLAHE(clipLimit=clip_lim, tileGridSize=(4, 4))
     image = clahe.apply(image)
     return image
@@ -167,6 +167,7 @@ def start_analysis():
             file_name = input_file_path[:-4] + '_Auto_CLAHE'
             io_plugins.blockfile.file_writer(file_name + '.blo', stem_file_array)
             label3['text'] = label3['text'] + "Filtered file saved.\n"
+            print("Filtered file saved.\n")
             return
 
         # main window
