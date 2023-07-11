@@ -1,0 +1,7 @@
+hyperspy==1.7.5
+numpy==1.24.3
+opencv_python==4.7.0.72
+Pillow==10.0.0
+pixstem==0.4.0
+Requests==2.31.0
+tqdm==4.65.0
